@@ -56,6 +56,8 @@ Este proyecto es un juego educativo desarrollado con el objetivo de hacer que el
 - **Interactividad y Diversión**: Hacer que el aprendizaje de las tablas de multiplicar sea más interactivo y entretenido, especialmente para los niños.
 - **Tecnologías Utilizadas**: HTML, CSS y JavaScript.
 
+![visits](https://visit-counter.vercel.app/counter.png?page=https%3A%2F%2Ffrankhs899.github.io%2FBlastMath%2F&s=40&c=00ff00&bg=00000000&no=2&ff=digi&tb=Visitas%3A&ta=)
+
 ## Instalación y Uso
 
 1. Clona el repositorio:
