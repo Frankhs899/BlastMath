@@ -14,12 +14,18 @@ let question;
 let options;
 let explosions;
 
+// Cargar imagen de la nave espacial
+const enemyImage = new Image();
+enemyImage.src = 'assets/alien.svg'; // Ruta de imagen nave espacial
+
+// Cargar imagen del cañon
+const cannonImage = new Image();
+cannonImage.src = 'assets/war_tank.svg'; // Ruta imagen cañon
+
 // Colores
 const colors = {
-    background: '#87CEEB', // Azul claro.
-    cannon: '#32CD32', // verde brillante.
+    background: '#000', // Azul claro.
     bullet: '#FFFF00', // Amarillo.
-    enemy: '#FF6347', // Rojo brillante.
     text: '#FFFFFF', // Blanco.
     platform: '#FFA500', // Naranja.
     explosion: '#FF69B4' // Rosa.
@@ -30,7 +36,7 @@ function init() {
     score = 0;
     correctAnswer = 0;
     gameState = 'playing';
-    cannon = { x: canvas.width / 2, y: canvas.height - 50, width: 50, height: 50, speed: 20 };
+    cannon = { x: canvas.width / 2, y: canvas.height - 50, width: 100, height: 70, speed: 20 };
     bullets = [];
     enemies = [];
     question = '';
@@ -70,8 +76,8 @@ function generateQuestion() {
     enemies = options.map((option, index) => ({
         x: (index + 1) * (canvas.width / 5),
         y: 50,
-        width: 120,
-        height: 60,
+        width: 160,
+        height: 90,
         value: option,
         speed: 0.5 + score * 0.1
     }));
@@ -113,8 +119,7 @@ function drawBackground() {
 
 // Dibujar cañón
 function drawCannon() {
-    ctx.fillStyle = colors.cannon;
-    ctx.fillRect(cannon.x - cannon.width / 2, cannon.y - cannon.height / 2, cannon.width, cannon.height);
+    ctx.drawImage(cannonImage, cannon.x - cannon.width / 2, cannon.y - cannon.height / 2, cannon.width, cannon.height);
 }
 
 // Dibujar balas
@@ -132,12 +137,11 @@ function drawBullets() {
 // Dibujar enemigos
 function drawEnemies() {
     enemies.forEach(enemy => {
-        ctx.fillStyle = colors.enemy;
-        ctx.fillRect(enemy.x - enemy.width / 2, enemy.y - enemy.height / 2, enemy.width, enemy.height);
+        ctx.drawImage(enemyImage, enemy.x - enemy.width / 2, enemy.y - enemy.height / 2, enemy.width, enemy.height);
         ctx.fillStyle = colors.text;
         ctx.font = '20px "Press Start 2P"';
         ctx.textAlign = 'center';
-        ctx.fillText(enemy.value, enemy.x, enemy.y + 7);
+        ctx.fillText(enemy.value, enemy.x, enemy.y + enemy.height / 2 + 20);
     });
 }
 
