@@ -4,6 +4,10 @@
 
 Este proyecto es un juego educativo desarrollado con el objetivo de hacer que el aprendizaje de las tablas de multiplicar sea más interactivo y divertido. Inspirado en juegos clásicos de disparos, el jugador debe disparar a las respuestas correctas de preguntas matemáticas para ganar puntos.
 
+## Demo
+
+[Demo](https://frankhs899.github.io/BlastMath/)
+
 ## Funcionalidades Clave
 
 1. **Lienzo y Contexto**:
